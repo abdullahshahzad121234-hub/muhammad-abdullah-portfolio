@@ -2834,3 +2834,34 @@ p {
         color: black;
     }
 }
+/* ========================================
+   FIX: VIEW ALL PROJECTS BUTTON POSITION
+   ======================================== */
+
+.view-all-projects {
+    text-align: center;
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-lg);
+    clear: both;
+}
+
+/* Make sure the button has proper spacing from the last project card */
+.featured-projects .projects-grid {
+    margin-bottom: 0;
+}
+
+.featured-projects .view-all-projects {
+    margin-top: 3rem;
+    position: relative;
+}
+
+/* Optional: Add a subtle divider line above the button */
+.view-all-projects::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--purple), transparent);
+    margin: 0 auto var(--space-lg);
+    border-radius: 2px;
+}
