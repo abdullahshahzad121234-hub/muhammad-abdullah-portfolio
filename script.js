@@ -33,7 +33,7 @@ if (hamburger && navLinks) {
     });
 }
 
-// Fade-up Reveal on Scroll
+// Fade-up Reveal on Scroll (includes agency-card)
 const fadeElements = document.querySelectorAll('.project-card, .approach-card, .faq-item, .contact-card, .tool-item, .about-grid, .agency-card');
 fadeElements.forEach(el => el.classList.add('fade-up'));
 const observer = new IntersectionObserver((entries) => {
