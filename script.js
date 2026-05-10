@@ -34,7 +34,7 @@ if (hamburger && navLinks) {
 }
 
 // Fade-up Reveal on Scroll
-const fadeElements = document.querySelectorAll('.project-card, .approach-card, .faq-item, .contact-card, .tool-item, .about-grid');
+const fadeElements = document.querySelectorAll('.project-card, .approach-card, .faq-item, .contact-card, .tool-item, .about-grid, .agency-card');
 fadeElements.forEach(el => el.classList.add('fade-up'));
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
