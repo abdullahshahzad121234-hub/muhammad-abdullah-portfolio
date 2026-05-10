@@ -2865,3 +2865,39 @@ p {
     margin: 0 auto var(--space-lg);
     border-radius: 2px;
 }
+/* ========================================
+   FORCE FIX: VIEW ALL PROJECTS BUTTON
+   ======================================== */
+
+.featured-projects {
+    padding-bottom: var(--space-3xl);
+}
+
+.featured-projects .projects-grid {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.view-all-projects {
+    text-align: center;
+    margin-top: 4rem !important;
+    padding-top: 2rem !important;
+    display: block !important;
+    clear: both !important;
+    position: relative !important;
+}
+
+/* Add spacing above the button */
+.view-all-projects::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--purple), transparent);
+    margin: 0 auto 2rem auto;
+}
+
+/* Make sure button has proper spacing */
+.view-all-projects .btn {
+    margin-top: 0;
+}
