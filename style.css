@@ -1090,3 +1090,32 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
     .floating-icon:nth-child(4) { width: 34px; height: 34px; }
     .floating-icon:nth-child(5) { width: 32px; height: 32px; }
 }
+/* ========================================
+   FIXES FOR FLOATING ICONS & MARQUEE
+   ======================================== */
+
+/* Show all 5 floating icons on mobile */
+@media (max-width: 768px) {
+    .floating-icon:nth-child(3),
+    .floating-icon:nth-child(4),
+    .floating-icon:nth-child(5) {
+        display: flex !important;
+    }
+    
+    .floating-icon {
+        opacity: 0.25 !important;
+    }
+    
+    .floating-icon:nth-child(1) { top: 10%; left: 2%; width: 30px; height: 30px; }
+    .floating-icon:nth-child(2) { top: 45%; left: 8%; width: 32px; height: 32px; }
+    .floating-icon:nth-child(3) { top: 25%; right: 10%; left: auto; width: 28px; height: 28px; }
+    .floating-icon:nth-child(4) { top: 65%; right: 5%; left: auto; width: 30px; height: 30px; }
+    .floating-icon:nth-child(5) { top: 80%; left: 15%; width: 28px; height: 28px; }
+}
+
+/* Fix marquee SVG visibility */
+.tool-item svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--purple);
+}
