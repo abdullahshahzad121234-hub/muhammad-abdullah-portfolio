@@ -68,14 +68,14 @@ fadeElements.forEach(el => observer.observe(el));
 // Marquee Animation
 const marqueeTrack = document.getElementById('marqueeTrack');
 if (marqueeTrack && marqueeTrack.children.length === 0) {
-    const toolsList = [
-        { name: 'Figma', icon: 'fab fa-figma' },
-        { name: 'Webflow', icon: 'fab fa-webflow' },
-        { name: 'JavaScript', icon: 'fab fa-js' },
-        { name: 'GSAP', icon: 'fas fa-code' },
-        { name: 'HTML5', icon: 'fab fa-html5' },
-        { name: 'CSS3', icon: 'fab fa-css3-alt' }
-    ];
+const toolsList = [
+    { name: 'Figma', icon: 'fab fa-figma' },
+    { name: 'Webflow', icon: 'fab fa-webflow' },
+    { name: 'JavaScript', icon: 'fab fa-js' },
+    { name: 'GSAP', icon: 'fas fa-code' },
+    { name: 'HTML5', icon: 'fab fa-html5' },
+    { name: 'CSS3', icon: 'fab fa-css3-alt' }
+];
     
     let html = '';
     for (let i = 0; i < 3; i++) {
