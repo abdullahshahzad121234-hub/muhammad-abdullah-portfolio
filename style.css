@@ -915,3 +915,34 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
         margin-top: 2rem;
     }
 }
+/* ========================================
+   INTERFACE LAB LOGO FIX
+   ======================================== */
+
+.agency-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto var(--space-md);
+    border-radius: 1rem !important;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a2e, #0a0a0a);
+    border: 2px solid var(--border-purple);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agency-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/* Hover effect for logo */
+.agency-card:hover .agency-logo {
+    border-color: var(--purple);
+    transform: scale(1.02);
+    transition: var(--transition-base);
+}
