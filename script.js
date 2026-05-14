@@ -37,7 +37,6 @@ if (hamburger && navLinks) {
         if (navLinks.classList.contains('active')) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
-            // Prevent body scroll when menu is open
             document.body.style.overflow = 'hidden';
         } else {
             icon.classList.remove('fa-times');
@@ -72,7 +71,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
     }
 });
 
-// Fade-up Reveal on Scroll for multiple element types
+// Fade-up Reveal on Scroll
 const fadeElements = document.querySelectorAll(
     '.project-card, .approach-card, .faq-item, .contact-card, .tool-item, ' +
     '.about-grid, .agency-card, .content-block, .challenge-card, .solution-card, ' +
@@ -93,7 +92,7 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => observer.observe(el));
 
-// Also observe any elements with .animate-fade-up class (for case studies)
+// Also observe animate-fade-up elements
 document.querySelectorAll('.animate-fade-up').forEach(el => {
     observer.observe(el);
 });
@@ -146,7 +145,7 @@ if (marqueeTrack && marqueeTrack.children.length === 0) {
     });
 }
 
-// Active Nav Link Highlight (for index page sections)
+// Active Nav Link Highlight
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-link');
 
@@ -161,12 +160,10 @@ function updateActiveNav() {
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
             navItems.forEach(item => {
                 item.classList.remove('active');
-                // Check if href matches the section id
                 const href = item.getAttribute('href');
                 if (href === `#${sectionId}`) {
                     item.classList.add('active');
                 }
-                // Also handle case where href is index.html#section
                 if (href && href.includes(`#${sectionId}`)) {
                     item.classList.add('active');
                 }
@@ -186,7 +183,7 @@ window.addEventListener('load', () => {
     document.body.style.opacity = '1';
 });
 
-// Fix for any images that might not load
+// Image error handling
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('error', function() {
         console.warn('Image failed to load:', this.src);
