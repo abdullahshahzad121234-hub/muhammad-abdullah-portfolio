@@ -11,6 +11,21 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+// Scroll Progress Bar
+function updateScrollProgress() {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById('scrollProgress');
+    if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+    }
+}
+
+window.addEventListener('scroll', updateScrollProgress);
+window.addEventListener('resize', updateScrollProgress);
+updateScrollProgress();
+
 // Hamburger Menu
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -22,9 +37,12 @@ if (hamburger && navLinks) {
         if (navLinks.classList.contains('active')) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = 'hidden';
         } else {
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
+            document.body.style.overflow = '';
         }
     });
 }
@@ -32,10 +50,15 @@ if (hamburger && navLinks) {
 // Close menu when clicking a link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        const icon = hamburger.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+        if (navLinks && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            const icon = hamburger.querySelector('i');
+            if (icon) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+            document.body.style.overflow = '';
+        }
     });
 });
 
@@ -49,8 +72,13 @@ document.querySelectorAll('.faq-item').forEach(item => {
     }
 });
 
-// Fade-up Reveal on Scroll
-const fadeElements = document.querySelectorAll('.project-card, .approach-card, .faq-item, .contact-card, .tool-item, .about-grid, .agency-card');
+// Fade-up Reveal on Scroll for multiple element types
+const fadeElements = document.querySelectorAll(
+    '.project-card, .approach-card, .faq-item, .contact-card, .tool-item, ' +
+    '.about-grid, .agency-card, .content-block, .challenge-card, .solution-card, ' +
+    '.tech-item, .gallery-item, .feature-card, .result-card, .quote-card, ' +
+    '.process-step, .product-feature, .next-project'
+);
 
 fadeElements.forEach(el => el.classList.add('fade-up'));
 
@@ -61,21 +89,26 @@ const observer = new IntersectionObserver((entries) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 fadeElements.forEach(el => observer.observe(el));
+
+// Also observe any elements with .animate-fade-up class (for case studies)
+document.querySelectorAll('.animate-fade-up').forEach(el => {
+    observer.observe(el);
+});
 
 // Marquee Animation
 const marqueeTrack = document.getElementById('marqueeTrack');
 if (marqueeTrack && marqueeTrack.children.length === 0) {
-const toolsList = [
-    { name: 'Webflow', icon: 'fab fa-webflow' },
-    { name: 'Figma', icon: 'fab fa-figma' },
-    { name: 'HubSpot', icon: 'fab fa-hubspot' },
-    { name: 'JavaScript', icon: 'fab fa-js' },
-    { name: 'HTML5', icon: 'fab fa-html5' },
-    { name: 'CSS3', icon: 'fab fa-css3-alt' }
-];
+    const toolsList = [
+        { name: 'Webflow', icon: 'fab fa-webflow' },
+        { name: 'Figma', icon: 'fab fa-figma' },
+        { name: 'HubSpot', icon: 'fab fa-hubspot' },
+        { name: 'JavaScript', icon: 'fab fa-js' },
+        { name: 'HTML5', icon: 'fab fa-html5' },
+        { name: 'CSS3', icon: 'fab fa-css3-alt' }
+    ];
     
     let html = '';
     for (let i = 0; i < 3; i++) {
@@ -91,9 +124,10 @@ const toolsList = [
     let isHovering = false;
     
     function animateMarquee() {
-        if (!isHovering) {
+        if (!isHovering && marqueeTrack) {
             pos -= speed;
-            if (Math.abs(pos) >= marqueeTrack.scrollWidth / 3) {
+            const trackWidth = marqueeTrack.scrollWidth / 3;
+            if (Math.abs(pos) >= trackWidth) {
                 pos = 0;
             }
             marqueeTrack.style.transform = `translate3d(${pos}px, 0, 0)`;
@@ -112,7 +146,7 @@ const toolsList = [
     });
 }
 
-// Active Nav Link Highlight
+// Active Nav Link Highlight (for index page sections)
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-link');
 
@@ -127,7 +161,13 @@ function updateActiveNav() {
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
             navItems.forEach(item => {
                 item.classList.remove('active');
-                if (item.getAttribute('href') === `#${sectionId}`) {
+                // Check if href matches the section id
+                const href = item.getAttribute('href');
+                if (href === `#${sectionId}`) {
+                    item.classList.add('active');
+                }
+                // Also handle case where href is index.html#section
+                if (href && href.includes(`#${sectionId}`)) {
                     item.classList.add('active');
                 }
             });
@@ -144,4 +184,11 @@ document.body.style.transition = 'opacity 0.5s ease';
 
 window.addEventListener('load', () => {
     document.body.style.opacity = '1';
+});
+
+// Fix for any images that might not load
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function() {
+        console.warn('Image failed to load:', this.src);
+    });
 });
