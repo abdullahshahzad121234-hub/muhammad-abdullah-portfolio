@@ -219,7 +219,7 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
 }
 
 /* ========================================
-   HERO SECTION WITH GRID & GLOW (RESTORED)
+   HERO SECTION WITH GRID & GLOW
    ======================================== */
 
 .hero {
@@ -289,16 +289,15 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
 .floating-icon:nth-child(5) { top: 20%; left: 85%; width: 44px; height: 44px; animation-duration: 20s; }
 .floating-icon:nth-child(6) { top: 80%; left: 20%; width: 46px; height: 46px; animation-duration: 17s; }
 
-.floating-icon i {
-    font-size: 32px;
+.floating-icon i,
+.floating-icon svg {
+    width: 100%;
+    height: 100%;
     color: var(--purple);
 }
 
-/* Force Webflow icon to show (fix) */
-.fa-webflow:before {
-    content: "\e611";
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
+.floating-icon svg path {
+    fill: var(--purple);
 }
 
 .hero-content {
@@ -457,10 +456,16 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
     border-color: var(--purple);
 }
 
-.tech-item i {
+.tech-item i,
+.tech-item svg {
     font-size: 2.5rem;
     color: var(--purple);
     margin-bottom: var(--space-sm);
+}
+
+.tech-item svg {
+    width: 40px;
+    height: auto;
 }
 
 .tech-item h4 {
@@ -1090,9 +1095,15 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
     white-space: nowrap;
 }
 
-.tool-item i {
+.tool-item i,
+.tool-item svg {
     font-size: 1.3rem;
     color: var(--purple);
+}
+
+.tool-item svg {
+    width: 24px;
+    height: auto;
 }
 
 /* FAQ Section */
@@ -1450,8 +1461,10 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
     .floating-icon:nth-child(5) { width: 28px; height: 28px; top: 80%; left: 15%; }
     .floating-icon:nth-child(6) { width: 30px; height: 30px; top: 15%; left: auto; right: 20%; display: flex; }
     
-    .floating-icon i {
-        font-size: 20px;
+    .floating-icon i,
+    .floating-icon svg {
+        width: 100% !important;
+        height: 100% !important;
     }
 }
 
@@ -1500,4 +1513,9 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
     .stat-item h3 {
         font-size: 2rem;
     }
+}
+
+/* Custom Webflow SVG Icon styling */
+.webflow-icon-svg path {
+    fill: var(--purple);
 }
