@@ -74,9 +74,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 // Fade-up Reveal on Scroll
 const fadeElements = document.querySelectorAll(
     '.project-card, .approach-card, .faq-item, .contact-card, .tool-item, ' +
-    '.about-grid, .agency-card, .content-block, .challenge-card, .solution-card, ' +
-    '.tech-item, .gallery-item, .feature-card, .result-card, .quote-card, ' +
-    '.process-step, .product-feature, .next-project'
+    '.about-grid, .agency-card, .result-card'
 );
 
 fadeElements.forEach(el => el.classList.add('fade-up'));
@@ -92,11 +90,6 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => observer.observe(el));
 
-// Also observe animate-fade-up elements
-document.querySelectorAll('.animate-fade-up').forEach(el => {
-    observer.observe(el);
-});
-
 // Marquee Animation with Custom Webflow SVG
 const marqueeTrack = document.getElementById('marqueeTrack');
 if (marqueeTrack && marqueeTrack.children.length === 0) {
@@ -109,7 +102,7 @@ if (marqueeTrack && marqueeTrack.children.length === 0) {
         { name: 'CSS3', icon: 'fab fa-css3-alt' }
     ];
     
-    const webflowSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 63" fill="none" style="width:24px; height:auto;">
+    const webflowSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 63" fill="none">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M100 0L68.0913 62.3782H38.12L51.4737 36.526H50.8746C39.8578 50.8273 23.4206 60.2417 0 62.3782V36.8837C0 36.8837 14.9827 35.9988 23.7906 26.7386H0V0.000492722H26.7381V21.9922L27.3382 21.9897L38.2643 0.000492722H58.4857V21.8527L59.0858 21.8518L70.4219 0H100Z" fill="#a855f7"/>
     </svg>`;
     
@@ -191,8 +184,22 @@ window.addEventListener('load', () => {
     document.body.style.opacity = '1';
 });
 
-// Image error handling
-document.querySelectorAll('img').forEach(img => {
+// Fix for Interface Lab logo - add fallback on error
+const agencyLogoImg = document.querySelector('.agency-logo img');
+if (agencyLogoImg) {
+    agencyLogoImg.addEventListener('error', function() {
+        // Create fallback div if image fails
+        const parent = this.parentElement;
+        const fallback = document.createElement('div');
+        fallback.className = 'logo-fallback';
+        fallback.textContent = 'IL';
+        parent.innerHTML = '';
+        parent.appendChild(fallback);
+    });
+}
+
+// Image error handling for other images
+document.querySelectorAll('img:not(.agency-logo img)').forEach(img => {
     img.addEventListener('error', function() {
         console.warn('Image failed to load:', this.src);
     });
