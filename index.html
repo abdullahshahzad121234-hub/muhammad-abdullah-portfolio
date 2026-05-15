@@ -29,12 +29,12 @@
         <a href="index.html" class="logo">MA</a>
         <div class="nav-links" id="navLinks">
             <a href="index.html" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#approach" class="nav-link">Approach</a>
+            <a href="#section_about" class="nav-link">About</a>
+            <a href="#section_approach" class="nav-link">Approach</a>
             <a href="projects.html" class="nav-link">Projects</a>
-            <a href="#interface-lab" class="nav-link">Agency</a>
-            <a href="#faq" class="nav-link">FAQ</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#section_agency" class="nav-link">Agency</a>
+            <a href="#section_faq" class="nav-link">FAQ</a>
+            <a href="#section_contact" class="nav-link">Contact</a>
         </div>
         <button class="hamburger" id="hamburger">
             <i class="fas fa-bars"></i>
@@ -42,15 +42,19 @@
     </div>
 </nav>
 
-<main>
+<main class="page-wrapper">
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-gradient"></div>
-        <div class="hero-grid"></div>
-        <div class="hero-grid-glow"></div>
+    <section id="section_hero" class="section_hero">
+        <div class="hero_gradient"></div>
+        <div class="hero_grid"></div>
+        <div class="hero_grid-glow"></div>
         
         <div class="floating-icons">
-            <div class="floating-icon"><i class="fab fa-webflow"></i></div>
+            <div class="floating-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 63" fill="none" class="icon-svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M100 0L68.0913 62.3782H38.12L51.4737 36.526H50.8746C39.8578 50.8273 23.4206 60.2417 0 62.3782V36.8837C0 36.8837 14.9827 35.9988 23.7906 26.7386H0V0.000492722H26.7381V21.9922L27.3382 21.9897L38.2643 0.000492722H58.4857V21.8527L59.0858 21.8518L70.4219 0H100Z" fill="#a855f7"/>
+                </svg>
+            </div>
             <div class="floating-icon"><i class="fab fa-figma"></i></div>
             <div class="floating-icon"><i class="fab fa-hubspot"></i></div>
             <div class="floating-icon"><i class="fab fa-js"></i></div>
@@ -58,221 +62,266 @@
             <div class="floating-icon"><i class="fab fa-css3-alt"></i></div>
         </div>
         
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge">Webflow Developer & Frontend Designer</span>
-                <h1 class="hero-title">Muhammad Abdullah <span class="highlight">Shahzad</span></h1>
-                <p class="hero-desc">I build websites that actually work — clean code, smooth animations, and a focus on what matters. Right now, I'm working at <strong>Interface Lab</strong>, turning Figma designs into real, functional Webflow sites.</p>
-                <div class="hero-buttons">
-                    <a href="projects.html" class="btn btn-primary">View Projects <i class="fas fa-arrow-down"></i></a>
-                    <a href="#contact" class="btn btn-outline">Let's Talk</a>
+        <div class="container-large">
+            <div class="padding-global">
+                <div class="hero_content-wrapper">
+                    <span class="hero_badge">Webflow Developer & Frontend Designer</span>
+                    <h1 class="hero_title">Muhammad Abdullah <span class="text-color-purple">Shahzad</span></h1>
+                    <p class="hero_description">I build websites that actually work — clean code, smooth animations, and a focus on what matters. Right now, I'm working at <strong>Interface Lab</strong>, turning Figma designs into real, functional Webflow sites.</p>
+                    <div class="hero_buttons">
+                        <a href="projects.html" class="button button--primary">View Projects <i class="fas fa-arrow-down"></i></a>
+                        <a href="#section_contact" class="button button--outline">Let's Talk</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>About <span class="highlight">Me</span></h2>
-                <p>Get to know who I am and what I do</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <img src="https://i.ibb.co/jZWygxmJ/Whats-App-Image-2026-05-05-at-4-06-00-PM.jpg" alt="Muhammad Abdullah" class="profile-photo">
-                    </div>
+    <section id="section_about" class="section_about padding-section-large">
+        <div class="container-large">
+            <div class="padding-global">
+                <div class="section-header text-align-center">
+                    <h2>About <span class="text-color-purple">Me</span></h2>
+                    <p class="text-size-regular">Get to know who I am and what I do</p>
                 </div>
-                <div class="about-content">
-                    <p>I'm a Webflow developer who focuses on building clean, responsive websites that are easy to manage and scale. I work with Figma and Webflow, using a structured approach to keep everything organized and maintainable.</p>
-                    <p>At <span class="about-highlight">Interface Lab</span>, I build real projects, collaborate with a team, and solve actual client problems. I've learned to write cleaner code, optimize for performance, and design with the user in mind.</p>
-                    <p>I'm always learning, and I'm open to remote work — whether it's a one‑off project, a part‑time role, or something full‑time.</p>
+                <div class="about_grid">
+                    <div class="about_image-wrapper">
+                        <div class="about_image">
+                            <img src="https://i.ibb.co/jZWygxmJ/Whats-App-Image-2026-05-05-at-4-06-00-PM.jpg" alt="Muhammad Abdullah">
+                        </div>
+                    </div>
+                    <div class="about_content">
+                        <p>I'm a Webflow developer who focuses on building clean, responsive websites that are easy to manage and scale. I work with Figma and Webflow, using a structured approach to keep everything organized and maintainable.</p>
+                        <p>At <span class="about_highlight">Interface Lab</span>, I build real projects, collaborate with a team, and solve actual client problems. I've learned to write cleaner code, optimize for performance, and design with the user in mind.</p>
+                        <p>I'm always learning, and I'm open to remote work — whether it's a one‑off project, a part‑time role, or something full‑time.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Approach Section -->
-    <section id="approach" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>My <span class="highlight">Approach</span></h2>
-                <p>A structured process focused on building scalable, high‑performing websites</p>
-            </div>
-            <div class="approach-grid">
-                <div class="approach-card">
-                    <div class="approach-step">01</div>
-                    <h3>Understand & Strategize</h3>
-                    <p>I start by understanding what you actually need — not just the design, but how your audience will use the site.</p>
+    <section id="section_approach" class="section_approach padding-section-large">
+        <div class="container-large">
+            <div class="padding-global">
+                <div class="section-header text-align-center">
+                    <h2>My <span class="text-color-purple">Approach</span></h2>
+                    <p class="text-size-regular">A structured process focused on building scalable, high‑performing websites</p>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-step">02</div>
-                    <h3>Build with Structure</h3>
-                    <p>I build using a clean, reusable system that makes the site easy to update, scale, and maintain.</p>
-                </div>
-                <div class="approach-card">
-                    <div class="approach-step">03</div>
-                    <h3>Optimize & Refine</h3>
-                    <p>I make sure everything is fast, responsive, and polished for both users and search engines.</p>
+                <div class="grid-3col">
+                    <div class="card card--approach">
+                        <div class="approach_step-number">01</div>
+                        <h3>Understand & Strategize</h3>
+                        <p class="text-size-regular">I start by understanding what you actually need — not just the design, but how your audience will use the site.</p>
+                    </div>
+                    <div class="card card--approach">
+                        <div class="approach_step-number">02</div>
+                        <h3>Build with Structure</h3>
+                        <p class="text-size-regular">I build using a clean, reusable system that makes the site easy to update, scale, and maintain.</p>
+                    </div>
+                    <div class="card card--approach">
+                        <div class="approach_step-number">03</div>
+                        <h3>Optimize & Refine</h3>
+                        <p class="text-size-regular">I make sure everything is fast, responsive, and polished for both users and search engines.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Selected Projects Section -->
-    <section class="section featured-projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>Selected <span class="highlight">Projects</span></h2>
-                <p>Some of my recent work — full case studies available</p>
-            </div>
-            <div class="projects-grid">
-                <a href="projects/bull-on-wall-street.html" class="project-card-link">
-                    <div class="project-card">
-                        <div class="project-img-container">
-                            <div class="project-img">
-                                <img src="https://i.ibb.co/KjYjfqR9/bullonwallstreet.png" alt="Bull On Wall Street" style="width:100%; height:100%; object-fit:cover;">
+    <section class="section_projects padding-section-large">
+        <div class="container-large">
+            <div class="padding-global">
+                <div class="section-header text-align-center">
+                    <h2>Selected <span class="text-color-purple">Projects</span></h2>
+                    <p class="text-size-regular">Some of my recent work — full case studies available</p>
+                </div>
+                <div class="grid-projects">
+                    <a href="projects/bull-on-wall-street.html" class="project-card-link">
+                        <div class="card card--project">
+                            <div class="project_image-wrapper">
+                                <div class="project_image">
+                                    <img src="https://i.ibb.co/KjYjfqR9/bullonwallstreet.png" alt="Bull On Wall Street">
+                                </div>
+                            </div>
+                            <div class="project_content">
+                                <h3 class="project_title">Bull On Wall Street</h3>
+                                <p class="project_description">High-impact landing page with bold visuals and smooth GSAP animations.</p>
+                                <div class="project_tech-list">
+                                    <span class="tech-tag">Webflow</span>
+                                    <span class="tech-tag">GSAP</span>
+                                    <span class="tech-tag">CSS3</span>
+                                </div>
+                                <span class="view-case-link">View Case Study <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Bull On Wall Street</h3>
-                            <p class="project-description">High-impact landing page with bold visuals and smooth GSAP animations.</p>
-                            <div class="project-tech"><span class="tech-tag">Webflow</span><span class="tech-tag">GSAP</span><span class="tech-tag">CSS3</span></div>
-                            <span class="view-case-btn">View Case Study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </div>
-                </a>
-                <a href="projects/alia-usa.html" class="project-card-link">
-                    <div class="project-card">
-                        <div class="project-img-container">
-                            <div class="project-img">
-                                <img src="https://i.ibb.co/DgmvTC8V/aliausa.png" alt="Alia USA" style="width:100%; height:100%; object-fit:cover;">
+                    </a>
+                    <a href="projects/alia-usa.html" class="project-card-link">
+                        <div class="card card--project">
+                            <div class="project_image-wrapper">
+                                <div class="project_image">
+                                    <img src="https://i.ibb.co/DgmvTC8V/aliausa.png" alt="Alia USA">
+                                </div>
+                            </div>
+                            <div class="project_content">
+                                <h3 class="project_title">Alia USA</h3>
+                                <p class="project_description">Full-fledged organization website with Webflow CMS. Clean and trustworthy.</p>
+                                <div class="project_tech-list">
+                                    <span class="tech-tag">Figma</span>
+                                    <span class="tech-tag">Webflow</span>
+                                    <span class="tech-tag">CMS</span>
+                                </div>
+                                <span class="view-case-link">View Case Study <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Alia USA</h3>
-                            <p class="project-description">Full-fledged organization website with Webflow CMS. Clean and trustworthy.</p>
-                            <div class="project-tech"><span class="tech-tag">Figma</span><span class="tech-tag">Webflow</span><span class="tech-tag">CMS</span></div>
-                            <span class="view-case-btn">View Case Study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </div>
-                </a>
-                <a href="projects/tremco-construction.html" class="project-card-link">
-                    <div class="project-card">
-                        <div class="project-img-container">
-                            <div class="project-img">
-                                <img src="https://i.ibb.co/Q7v3scwr/tremco.png" alt="Tremco Construction" style="width:100%; height:100%; object-fit:cover;">
+                    </a>
+                    <a href="projects/tremco-construction.html" class="project-card-link">
+                        <div class="card card--project">
+                            <div class="project_image-wrapper">
+                                <div class="project_image">
+                                    <img src="https://i.ibb.co/Q7v3scwr/tremco.png" alt="Tremco Construction">
+                                </div>
+                            </div>
+                            <div class="project_content">
+                                <h3 class="project_title">Tremco Construction</h3>
+                                <p class="project_description">Fast, modern construction website with Lenis smooth scroll.</p>
+                                <div class="project_tech-list">
+                                    <span class="tech-tag">Webflow</span>
+                                    <span class="tech-tag">Lenis</span>
+                                    <span class="tech-tag">Figma</span>
+                                </div>
+                                <span class="view-case-link">View Case Study <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Tremco Construction</h3>
-                            <p class="project-description">Fast, modern construction website with Lenis smooth scroll.</p>
-                            <div class="project-tech"><span class="tech-tag">Webflow</span><span class="tech-tag">Lenis</span><span class="tech-tag">Figma</span></div>
-                            <span class="view-case-btn">View Case Study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </div>
-                </a>
-                <a href="projects/forcaster.html" class="project-card-link">
-                    <div class="project-card">
-                        <div class="project-img-container">
-                            <div class="project-img">
-                                <img src="https://i.ibb.co/yBMFdS6K/forcaster.png" alt="Forecaster Golf" style="width:100%; height:100%; object-fit:cover;">
+                    </a>
+                    <a href="projects/forcaster.html" class="project-card-link">
+                        <div class="card card--project">
+                            <div class="project_image-wrapper">
+                                <div class="project_image">
+                                    <img src="https://i.ibb.co/yBMFdS6K/forcaster.png" alt="Forecaster Golf">
+                                </div>
+                            </div>
+                            <div class="project_content">
+                                <h3 class="project_title">Forecaster Golf</h3>
+                                <p class="project_description">Data-driven golf analytics platform with interactive charts.</p>
+                                <div class="project_tech-list">
+                                    <span class="tech-tag">Webflow</span>
+                                    <span class="tech-tag">Chart.js</span>
+                                    <span class="tech-tag">Figma</span>
+                                </div>
+                                <span class="view-case-link">View Case Study <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Forecaster Golf</h3>
-                            <p class="project-description">Data-driven golf analytics platform with interactive charts.</p>
-                            <div class="project-tech"><span class="tech-tag">Webflow</span><span class="tech-tag">Chart.js</span><span class="tech-tag">Figma</span></div>
-                            <span class="view-case-btn">View Case Study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="view-all-projects">
-                <a href="projects.html" class="btn btn-outline">View All Projects <i class="fas fa-arrow-right"></i></a>
+                    </a>
+                </div>
+                <div class="view-all-projects text-align-center">
+                    <a href="projects.html" class="button button--outline">View All Projects <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Tools Section - Marquee -->
-    <section class="section tools-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>My Core <span class="highlight">Toolkit</span></h2>
-                <p>Technologies & platforms I work with daily</p>
+    <section class="section_tools padding-section-large">
+        <div class="container-large">
+            <div class="padding-global">
+                <div class="section-header text-align-center">
+                    <h2>My Core <span class="text-color-purple">Toolkit</span></h2>
+                    <p class="text-size-regular">Technologies & platforms I work with daily</p>
+                </div>
             </div>
         </div>
-        <div class="marquee-container">
-            <div class="marquee-track" id="marqueeTrack"></div>
+        <div class="marquee_container">
+            <div class="marquee_track" id="marqueeTrack"></div>
         </div>
     </section>
 
     <!-- Agency Section -->
-    <section id="interface-lab" class="section">
-        <div class="container">
-            <div class="agency-card">
-                <div class="agency-logo">
-                    <img src="https://i.ibb.co/jvY1ph2P/interface-lab-pro-logo.jpg" alt="Interface Lab Pro Logo">
-                </div>
-                <div class="agency-info">
-                    <span class="agency-label">My Role at Interface Lab</span>
-                    <h3>Interface Lab <span class="highlight">— Digital Agency</span></h3>
-                    <p>I am part of <a href="https://interfacelab.pro" target="_blank" class="agency-link">Interface Lab</a>, a contemporary digital agency that designs and builds modern websites. My job is to take design concepts and turn them into functional, flexible, and good‑looking websites.</p>
-                    <p>I focus on Webflow and CMS development — bringing Figma designs into a clean, well‑structured site, adding interactive features, and using Lenis for smooth scroll animations.</p>
-                    <ul class="agency-list">
-                        <li><i class="fas fa-check-circle"></i> Webflow development & CMS</li>
-                        <li><i class="fas fa-check-circle"></i> Figma to high‑fidelity website</li>
-                        <li><i class="fas fa-check-circle"></i> Interactive animations & Lenis scroll</li>
-                    </ul>
+    <section id="section_agency" class="section_agency padding-section-large">
+        <div class="container-large">
+            <div class="padding-global">
+                <div class="agency_card">
+                    <div class="agency_logo-wrapper">
+                        <img src="https://i.ibb.co/jvY1ph2P/interface-lab-pro-logo.jpg" alt="Interface Lab Pro Logo">
+                    </div>
+                    <div class="agency_info">
+                        <span class="agency_label">My Role at Interface Lab</span>
+                        <h3>Interface Lab <span class="text-color-purple">— Digital Agency</span></h3>
+                        <p class="text-size-regular">I am part of <a href="https://interfacelab.pro" target="_blank" class="agency_link">Interface Lab</a>, a contemporary digital agency that designs and builds modern websites. My job is to take design concepts and turn them into functional, flexible, and good‑looking websites.</p>
+                        <p class="text-size-regular">I focus on Webflow and CMS development — bringing Figma designs into a clean, well‑structured site, adding interactive features, and using Lenis for smooth scroll animations.</p>
+                        <ul class="agency_list">
+                            <li><i class="fas fa-check-circle"></i> Webflow development & CMS</li>
+                            <li><i class="fas fa-check-circle"></i> Figma to high‑fidelity website</li>
+                            <li><i class="fas fa-check-circle"></i> Interactive animations & Lenis scroll</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section faq-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Professional <span class="highlight">FAQ</span></h2>
-                <p>Answers to common questions</p>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <button class="faq-question">What is your development process? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>I start with a quick call to understand your needs, then move to design, build, test, and finally launch. You're involved the whole way.</p></div>
+    <section id="section_faq" class="section_faq padding-section-large">
+        <div class="container-large">
+            <div class="padding-global">
+                <div class="section-header text-align-center">
+                    <h2>Professional <span class="text-color-purple">FAQ</span></h2>
+                    <p class="text-size-regular">Answers to common questions</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">Do you take freelance work? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Yes — I'm open to select freelance projects. Just reach out via email.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Which platforms do you work with? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>Primarily Webflow, but I also hand‑code HTML/CSS/JS when needed. I use Figma for design.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">How do you handle performance & SEO? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer"><p>I follow best practices, optimise images, write semantic HTML, and make sure everything is responsive and fast.</p></div>
+                <div class="faq_grid">
+                    <div class="faq_item">
+                        <button class="faq_question">What is your development process? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq_answer"><p class="text-size-regular">I start with a quick call to understand your needs, then move to design, build, test, and finally launch. You're involved the whole way.</p></div>
+                    </div>
+                    <div class="faq_item">
+                        <button class="faq_question">Do you take freelance work? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq_answer"><p class="text-size-regular">Yes — I'm open to select freelance projects. Just reach out via email.</p></div>
+                    </div>
+                    <div class="faq_item">
+                        <button class="faq_question">Which platforms do you work with? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq_answer"><p class="text-size-regular">Primarily Webflow, but I also hand‑code HTML/CSS/JS when needed. I use Figma for design.</p></div>
+                    </div>
+                    <div class="faq_item">
+                        <button class="faq_question">How do you handle performance & SEO? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq_answer"><p class="text-size-regular">I follow best practices, optimise images, write semantic HTML, and make sure everything is responsive and fast.</p></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="contact-card">
-                <h2>📬 Reach out directly</h2>
-                <p>Email or WhatsApp — I'll get back within 24h.</p>
-                <div class="contact-options">
-                    <a href="mailto:abdullah@interfacelab.pro" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>abdullah@interfacelab.pro</span>
-                    </a>
-                    <a href="https://wa.me/971529698108" target="_blank" class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>+971 52 969 8108</span>
-                    </a>
+    <section id="section_contact" class="section_contact padding-section-large">
+        <div class="container-large">
+            <div class="padding-global">
+                <div class="contact_card">
+                    <h2>📬 Reach out directly</h2>
+                    <p class="text-size-regular">Email or WhatsApp — I'll get back within 24h.</p>
+                    <div class="contact_options">
+                        <a href="mailto:abdullah@interfacelab.pro" class="contact_item">
+                            <i class="fas fa-envelope"></i>
+                            <span>abdullah@interfacelab.pro</span>
+                        </a>
+                        <a href="https://wa.me/971529698108" target="_blank" class="contact_item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+971 52 969 8108</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section_cta padding-section-large">
+        <div class="container-large">
+            <div class="padding-global">
+                <div class="cta_card">
+                    <h2>Ready to bring your <span class="text-color-purple">project</span> to life?</h2>
+                    <p class="text-size-regular" style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg);">Let's collaborate and create something amazing together.</p>
+                    <a href="#section_contact" class="button button--primary">Start a Project <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -280,28 +329,28 @@
 </main>
 
 <footer class="footer">
-    <div class="container">
-        <div class="footer-brand">
+    <div class="container-large">
+        <div class="footer_brand">
             <a href="index.html" class="logo">MA</a>
-            <p>Webflow Developer & Frontend Designer based at Interface Lab.</p>
+            <p class="text-size-small">Webflow Developer & Frontend Designer based at Interface Lab.</p>
         </div>
-        <div class="footer-links">
+        <div class="footer_links">
             <a href="index.html">Home</a>
-            <a href="#about">About</a>
-            <a href="#approach">Approach</a>
+            <a href="#section_about">About</a>
+            <a href="#section_approach">Approach</a>
             <a href="projects.html">Projects</a>
-            <a href="#interface-lab">Agency</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
+            <a href="#section_agency">Agency</a>
+            <a href="#section_faq">FAQ</a>
+            <a href="#section_contact">Contact</a>
         </div>
-        <div class="footer-social">
+        <div class="footer_social">
             <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" target="_blank"><i class="fab fa-github"></i></a>
             <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
-    <div class="footer-bottom">
-        <p>© 2025 Muhammad Abdullah Shahzad. All rights reserved</p>
+    <div class="footer_bottom">
+        <p class="text-size-small">© 2025 Muhammad Abdullah Shahzad. All rights reserved</p>
     </div>
 </footer>
 
