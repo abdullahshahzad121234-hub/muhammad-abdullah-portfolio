@@ -62,8 +62,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // FAQ Accordion
-document.querySelectorAll('.faq-item').forEach(item => {
-    const btn = item.querySelector('.faq-question');
+document.querySelectorAll('.faq_item').forEach(item => {
+    const btn = item.querySelector('.faq_question');
     if (btn) {
         btn.addEventListener('click', () => {
             item.classList.toggle('active');
@@ -73,9 +73,9 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
 // Fade-up Reveal on Scroll
 const fadeElements = document.querySelectorAll(
-    '.project-card, .approach-card, .faq-item, .contact-card, .tool-item, ' +
-    '.about-grid, .agency-card, .content-block, .challenge-card, .solution-card, ' +
-    '.tech-item, .gallery-item, .feature-card, .result-card, .quote-card, ' +
+    '.card, .approach-card, .faq_item, .contact_card, .tool_item, ' +
+    '.about_grid, .agency_card, .content-block, .challenge-card, .solution-card, ' +
+    '.tech-item, .gallery-item, .feature-card, .result-card, .quote_card, ' +
     '.process-step, .product-feature, .next-project'
 );
 
@@ -101,18 +101,30 @@ document.querySelectorAll('.animate-fade-up').forEach(el => {
 const marqueeTrack = document.getElementById('marqueeTrack');
 if (marqueeTrack && marqueeTrack.children.length === 0) {
     const toolsList = [
-        { name: 'Webflow', icon: 'fab fa-webflow' },
+        { name: 'Webflow', type: 'svg' },
         { name: 'Figma', icon: 'fab fa-figma' },
         { name: 'HubSpot', icon: 'fab fa-hubspot' },
         { name: 'JavaScript', icon: 'fab fa-js' },
         { name: 'HTML5', icon: 'fab fa-html5' },
-        { name: 'CSS3', icon: 'fab fa-css3-alt' }
+        { name: 'CSS3', icon: 'fab fa-css3-alt' },
+        { name: 'GSAP', type: 'svg-gsap' }
     ];
+    
+    // GSAP SVG
+    const gsapSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 L7 12 L7 20 L2 20 Z M9 2 L14 2 L14 12 L9 12 Z M16 6 L21 6 L21 20 L16 20 Z" fill="#a855f7" stroke="#a855f7"/><rect x="2" y="12" width="5" height="8" fill="#a855f7"/><rect x="9" y="2" width="5" height="10" fill="#a855f7"/><rect x="16" y="6" width="5" height="14" fill="#a855f7"/></svg>`;
+    
+    const webflowSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 63" fill="none" class="icon-svg--small"><path fill-rule="evenodd" clip-rule="evenodd" d="M100 0L68.0913 62.3782H38.12L51.4737 36.526H50.8746C39.8578 50.8273 23.4206 60.2417 0 62.3782V36.8837C0 36.8837 14.9827 35.9988 23.7906 26.7386H0V0.000492722H26.7381V21.9922L27.3382 21.9897L38.2643 0.000492722H58.4857V21.8527L59.0858 21.8518L70.4219 0H100Z" fill="#a855f7"/></svg>`;
     
     let html = '';
     for (let i = 0; i < 3; i++) {
         toolsList.forEach(t => {
-            html += `<span class="tool-item"><i class="${t.icon}"></i> ${t.name}</span>`;
+            if (t.type === 'svg') {
+                html += `<span class="tool_item">${webflowSVG} ${t.name}</span>`;
+            } else if (t.type === 'svg-gsap') {
+                html += `<span class="tool_item">${gsapSVG} ${t.name}</span>`;
+            } else {
+                html += `<span class="tool_item"><i class="${t.icon}"></i> ${t.name}</span>`;
+            }
         });
     }
     marqueeTrack.innerHTML = html;
@@ -146,7 +158,7 @@ if (marqueeTrack && marqueeTrack.children.length === 0) {
 }
 
 // Active Nav Link Highlight
-const sections = document.querySelectorAll('section[id]');
+const sections = document.querySelectorAll('section[id], [id^="section_"]');
 const navItems = document.querySelectorAll('.nav-link');
 
 function updateActiveNav() {
@@ -157,7 +169,7 @@ function updateActiveNav() {
         const sectionBottom = sectionTop + section.offsetHeight;
         const sectionId = section.getAttribute('id');
         
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom && sectionId) {
             navItems.forEach(item => {
                 item.classList.remove('active');
                 const href = item.getAttribute('href');
@@ -165,6 +177,9 @@ function updateActiveNav() {
                     item.classList.add('active');
                 }
                 if (href && href.includes(`#${sectionId}`)) {
+                    item.classList.add('active');
+                }
+                if (href === sectionId) {
                     item.classList.add('active');
                 }
             });
