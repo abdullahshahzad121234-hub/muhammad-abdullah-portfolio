@@ -1,5 +1,5 @@
 /* ========================================
-   COMPLETE PORTFOLIO CSS - UPDATED LOGO
+   COMPLETE PORTFOLIO CSS - FINAL VERSION
    ======================================== */
 
 :root {
@@ -123,18 +123,20 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
     align-items: center;
 }
 
-/* ========== LOGO - UPDATED ========== */
+/* ========== LOGO ========== */
 .logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: #ffffff;
-    transition: color 0.25s ease;
-    white-space: nowrap;
+    transition: opacity 0.25s ease;
 }
-.logo:hover {
-    color: #a855f7;
+.logo svg {
+    height: 32px;
+    width: auto;
+    transition: all 0.25s ease;
+}
+.logo:hover svg text {
+    fill: #a855f7;
 }
 
 .nav-links { display: flex; gap: 2rem; }
@@ -688,9 +690,7 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
     gap: 1.5rem;
     font-size: 1.5rem;
 }
-.footer-social a i {
-    font-size: 1.5rem;
-}
+.footer-social a i { font-size: 1.5rem; }
 .footer-bottom {
     text-align: center;
     margin-top: var(--space-xl);
@@ -721,11 +721,7 @@ p { color: var(--text-secondary); font-size: var(--text-base); line-height: 1.7;
 @media (max-width: 768px) {
     :root { --container-padding: 1.25rem; --space-3xl: 4rem; --space-xl: 2rem; --text-5xl: 2rem; --text-4xl: 1.8rem; }
     
-    /* Mobile logo size */
-    .logo {
-        font-size: 0.85rem;
-        letter-spacing: 0.5px;
-    }
+    .logo svg { height: 24px; width: auto; }
     
     .nav-links {
         position: fixed;
