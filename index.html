@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23a855f7'/%3E%3Cstop offset='100%25' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='48' font-weight='bold' fill='white' text-anchor='middle'%3EMA%3C/text%3E%3C/svg%3E">
+    <!-- Favicon as inline SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 50'%3E%3Ctext x='0' y='35' font-family='Arial' font-size='24' font-weight='700' fill='%23a855f7'%3EMUHAMMAD ABDULLAH%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -17,12 +18,16 @@
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="/" class="logo">MUHAMMAD ABDULLAH</a>
+        <a href="/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 40" width="220" height="32">
+                <text x="0" y="28" font-family="'Inter', Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" letter-spacing="2">MUHAMMAD ABDULLAH</text>
+            </svg>
+        </a>
         <div class="nav-links" id="navLinks">
-            <a href="/" class="nav-link">Home</a>
+            <a href="/" class="nav-link" data-page="home">Home</a>
             <a href="/#about" class="nav-link">About</a>
             <a href="/#approach" class="nav-link">Approach</a>
-            <a href="/projects" class="nav-link">Projects</a>
+            <a href="/projects" class="nav-link" data-page="projects">Projects</a>
             <a href="/#interface-lab" class="nav-link">Agency</a>
             <a href="/#faq" class="nav-link">FAQ</a>
             <a href="/#contact" class="nav-link">Contact</a>
@@ -102,7 +107,14 @@
 
 <footer class="footer">
     <div class="container">
-        <div class="footer-brand"><a href="/" class="logo">MUHAMMAD ABDULLAH</a><p>Webflow Developer & Frontend Designer based at Interface Lab.</p></div>
+        <div class="footer-brand">
+            <a href="/" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 40" width="200" height="28">
+                    <text x="0" y="25" font-family="'Inter', Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff" letter-spacing="2">MUHAMMAD ABDULLAH</text>
+                </svg>
+            </a>
+            <p>Webflow Developer & Frontend Designer based at Interface Lab.</p>
+        </div>
         <div class="footer-links"><a href="/">Home</a><a href="/#about">About</a><a href="/#approach">Approach</a><a href="/projects">Projects</a><a href="/#interface-lab">Agency</a><a href="/#faq">FAQ</a><a href="/#contact">Contact</a></div>
         <div class="footer-social"><a href="https://www.linkedin.com/in/muhammad-abdullah0707/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/abdullahshahzad121234-hub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a><a href="https://wa.me/971529698108" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a><a href="mailto:abdullah@interfacelab.pro"><i class="fas fa-envelope"></i></a></div>
     </div>
